@@ -400,7 +400,7 @@ post : Json.Decoder value -> String -> Body -> Task Error value
 post decoder url body =
   let request =
         { verb = "POST"
-        , headers = []
+        , headers = [("Content-type", "application/json")]
         , url = url
         , body = body
         }
